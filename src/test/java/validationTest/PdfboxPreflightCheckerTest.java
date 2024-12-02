@@ -1,4 +1,7 @@
+package validationTest;
+
 import org.junit.jupiter.api.Test;
+import validation.PdfboxPreflightChecker;
 
 import java.io.File;
 import java.io.IOException;

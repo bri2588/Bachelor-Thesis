@@ -1,4 +1,7 @@
+package validationTest;
+
 import org.junit.jupiter.api.Test;
+import validation.VeraPdfChecker;
 
 import java.io.File;
 

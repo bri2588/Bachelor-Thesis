@@ -1,5 +1,8 @@
+package validationTest;
+
 import com.qoppa.pdf.PDFException;
 import org.junit.jupiter.api.Test;
+import validation.QoppaPreflightChecker;
 
 import java.io.File;
 import java.io.IOException;
