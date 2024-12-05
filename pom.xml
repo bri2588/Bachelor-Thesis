@@ -29,24 +29,11 @@
     </repositories>
 
     <dependencies>
-
         <!-- Preflight from pdfBox -->
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>preflight</artifactId>
             <version>2.0.29</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sun.activation</groupId>
-            <artifactId>javax.activation</artifactId>
-            <version>1.2.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
         </dependency>
 
         <!-- Validator from Aspose -->
@@ -63,29 +50,10 @@
             <version>2022R1.06</version>
         </dependency>
 
+        <!-- VeraPDF Library -->
         <dependency>
             <groupId>org.verapdf</groupId>
             <artifactId>validation-model</artifactId>
-            <version>1.26.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.verapdf</groupId>
-            <artifactId>parser</artifactId>
-            <version>1.26.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.verapdf</groupId>
-            <artifactId>pdf-model</artifactId>
-            <version>1.26.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.verapdf</groupId>
-            <artifactId>metadata-fixer</artifactId>
-            <version>1.26.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.verapdf</groupId>
-            <artifactId>pdfbox-validation-model</artifactId>
             <version>1.26.1</version>
         </dependency>
 
@@ -96,6 +64,5 @@
             <version>5.11.3</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 </project>
