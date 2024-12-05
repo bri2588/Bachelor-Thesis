@@ -1,0 +1,16 @@
+*.ipr
+*.iws
+*.iml
+*.ids
+*.swp
+target
+.project
+.settings
+.idea
+.svn
+.classpath
+sun-jaxb.episode
+.surefire-*
+.tm_properties
+*.log
+.DS_Store
