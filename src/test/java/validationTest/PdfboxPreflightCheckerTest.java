@@ -14,7 +14,7 @@ public class PdfboxPreflightCheckerTest {
     @Test
     public void shouldReturnTrueForPDFA1BFileWhenValidatingAsPDFA1B() throws IOException {
         PdfboxPreflightChecker checker = new PdfboxPreflightChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         boolean result = checker.isPDFAB1(file);
         assertTrue(result);
     }
@@ -22,7 +22,7 @@ public class PdfboxPreflightCheckerTest {
     @Test
     public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1A() throws IOException {
         PdfboxPreflightChecker checker = new PdfboxPreflightChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         boolean result = checker.isPDFAA1(file);
         assertTrue(result);
     }

@@ -15,7 +15,7 @@ public class QoppaPreflightCheckerTest {
     @Test
     public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1A() throws PDFException, IOException {
         QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         assertTrue(checker.isPdfA1A(file));
     }
 
@@ -36,14 +36,14 @@ public class QoppaPreflightCheckerTest {
     @Test
     public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1B() throws PDFException, IOException {
         QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         assertFalse(checker.isPdfA1B(file));
     }
 
     @Test
     public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1BAgain() throws PDFException, IOException {
         QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         assertFalse(checker.isPdfA1B(file));
     }
 

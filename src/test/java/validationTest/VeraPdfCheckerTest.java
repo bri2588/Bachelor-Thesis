@@ -13,7 +13,7 @@ public class VeraPdfCheckerTest {
     @Test
     public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1A() {
         VeraPdfChecker checker = new VeraPdfChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         assertTrue(checker.isPdfA1A(file));
     }
 
@@ -34,7 +34,7 @@ public class VeraPdfCheckerTest {
     @Test
     public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1B() {
         VeraPdfChecker checker = new VeraPdfChecker();
-        File file = new File("src/main/resources/PDFA1A.pdf");
+        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
         assertTrue(checker.isPdfA1B(file));
     }
 
