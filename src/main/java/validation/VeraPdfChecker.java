@@ -1,70 +1,42 @@
 package validation;
 
-import org.verapdf.core.EncryptedPdfException;
-import org.verapdf.core.ModelParsingException;
-import org.verapdf.core.ValidationException;
+import lombok.SneakyThrows;
+import lombok.experimental.UtilityClass;
 import org.verapdf.gf.foundry.VeraGreenfieldFoundryProvider;
 import org.verapdf.pdfa.Foundries;
 import org.verapdf.pdfa.PDFAParser;
 import org.verapdf.pdfa.PDFAValidator;
+import org.verapdf.pdfa.VeraPDFFoundry;
 import org.verapdf.pdfa.flavours.PDFAFlavour;
 import org.verapdf.pdfa.results.ValidationResult;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 
-
+@UtilityClass
 public class VeraPdfChecker {
 
     public boolean isPdfA1A(File file) {
-        VeraGreenfieldFoundryProvider.initialise();
-        PDFAFlavour flavour = PDFAFlavour.PDFA_1_A;
-        try (PDFAParser parser = Foundries.defaultInstance().createParser(new FileInputStream(file), flavour)) {
-            PDFAValidator validator = Foundries.defaultInstance().createValidator(flavour, false);
-            ValidationResult result = validator.validate(parser);
-            if (result.isCompliant()) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (IOException | ValidationException | ModelParsingException | EncryptedPdfException exception) {
-        }
-        return false;
+        return isValidPdf(file, PDFAFlavour.PDFA_1_A);
     }
 
     public boolean isPdfA1B(File file) {
-        VeraGreenfieldFoundryProvider.initialise();
-        PDFAFlavour flavour = PDFAFlavour.PDFA_1_B;
-        try (PDFAParser parser = Foundries.defaultInstance().createParser(new FileInputStream(file), flavour)) {
-            PDFAValidator validator = Foundries.defaultInstance().createValidator(flavour, false);
-            ValidationResult result = validator.validate(parser);
-            if (result.isCompliant()) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (IOException | ValidationException | ModelParsingException | EncryptedPdfException exception) {
-        }
-        return false;
+        return isValidPdf(file, PDFAFlavour.PDFA_1_B);
     }
-
 
     public boolean isPdfA3A(File file) {
-        VeraGreenfieldFoundryProvider.initialise();
-        PDFAFlavour flavour = PDFAFlavour.PDFA_3_A;
-        try (PDFAParser parser = Foundries.defaultInstance().createParser(new FileInputStream(file), flavour)) {
-            PDFAValidator validator = Foundries.defaultInstance().createValidator(flavour, false);
-            ValidationResult result = validator.validate(parser);
-            if (result.isCompliant()) {
-                return true;
-            } else {
-                return false;
-            }
-        } catch (IOException | ValidationException | ModelParsingException | EncryptedPdfException exception) {
-        }
-        return false;
+        return isValidPdf(file, PDFAFlavour.PDFA_3_A);
     }
 
+    @SneakyThrows
+    private boolean isValidPdf(File file, PDFAFlavour flavour) {
+        VeraGreenfieldFoundryProvider.initialise();
+        try (VeraPDFFoundry veraPDFFoundry = Foundries.defaultInstance();
+             PDFAParser parser = veraPDFFoundry.createParser(new FileInputStream(file), flavour)) {
+            PDFAValidator validator = veraPDFFoundry.createValidator(flavour, false);
+            ValidationResult result = validator.validate(parser);
+            return result.isCompliant();
+        }
+    }
 
 }

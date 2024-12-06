@@ -57,6 +57,13 @@
             <version>1.26.1</version>
         </dependency>
 
+        <!-- Utilities -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.32</version>
+        </dependency>
+
         <!-- Junit 5 for testing purposes-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>

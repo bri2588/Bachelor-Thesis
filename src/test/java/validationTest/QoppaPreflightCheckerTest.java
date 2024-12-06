@@ -1,63 +1,53 @@
 package validationTest;
 
-import com.qoppa.pdf.PDFException;
 import org.junit.jupiter.api.Test;
 import validation.QoppaPreflightChecker;
 
 import java.io.File;
-import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QoppaPreflightCheckerTest {
 
     @Test
-    public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1A() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
-        assertTrue(checker.isPdfA1A(file));
+    public void shouldReturnTrueForPDFA1AFileWhenValidatingAsPDFA1A() {
+        File file = new File("src/main/resources/PDFA1ASample.pdf");
+        assertTrue(QoppaPreflightChecker.isPdfA1A(file));
     }
 
     @Test
-    public void shouldReturnFalseForNonPDFAFileWhenValidatingAsPDFA1A() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
+    public void shouldReturnFalseForNonPDFAFileWhenValidatingAsPDFA1A() {
         File file = new File("src/main/resources/PDF.pdf");
-        assertFalse(checker.isPdfA1A(file));
+        assertFalse(QoppaPreflightChecker.isPdfA1A(file));
     }
 
     @Test
-    public void shouldReturnTrueForPDFA1BFileWhenValidatingAsPDFA1B() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1B.pdf");
-        assertTrue(checker.isPdfA1B(file));
+    public void shouldReturnTrueForPDFA1BFileWhenValidatingAsPDFA1B() {
+        File file = new File("src/main/resources/PDFA1BSample.pdf");
+        assertTrue(QoppaPreflightChecker.isPdfA1B(file));
     }
 
     @Test
-    public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1B() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
-        assertFalse(checker.isPdfA1B(file));
+    public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1B() {
+        File file = new File("src/main/resources/PDFA1ASample.pdf");
+        assertFalse(QoppaPreflightChecker.isPdfA1B(file));
     }
 
     @Test
-    public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1BAgain() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA1AKomplex.pdf");
-        assertFalse(checker.isPdfA1B(file));
+    public void shouldReturnFalseForPDFA1AFileWhenValidatingAsPDFA1BAgain() {
+        File file = new File("src/main/resources/PDFA1ASample.pdf");
+        assertFalse(QoppaPreflightChecker.isPdfA1B(file));
     }
 
     @Test
-    public void shouldReturnFalseForNonPDFAFileWhenValidatingAsPDFA1B() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
+    public void shouldReturnFalseForNonPDFAFileWhenValidatingAsPDFA1B() {
         File file = new File("src/main/resources/PDF.pdf");
-        assertFalse(checker.isPdfA1B(file));
+        assertFalse(QoppaPreflightChecker.isPdfA1B(file));
     }
 
     @Test
-    public void shouldReturnFalseForPDFA3AFileWhenValidatingAsPDFA2B() throws PDFException, IOException {
-        QoppaPreflightChecker checker = new QoppaPreflightChecker();
-        File file = new File("src/main/resources/PDFA3A.pdf");
-        assertFalse(checker.isPdfA2B(file));
+    public void shouldReturnFalseForPDFA3AFileWhenValidatingAsPDFA2B() {
+        File file = new File("src/main/resources/PDFA3ASample.pdf");
+        assertFalse(QoppaPreflightChecker.isPdfA2B(file));
     }
 }

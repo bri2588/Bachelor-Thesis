@@ -14,3 +14,4 @@ sun-jaxb.episode
 .tm_properties
 *.log
 .DS_Store
+validation-log.xml
