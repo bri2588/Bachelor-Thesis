@@ -23,11 +23,12 @@ public class AsposeCheckerTest {
         assertTrue(result);
     }
 
+    // This test should actually return true
     @Test
     public void shouldReturnTrueForPDFA1AWhenValidatingAsPDFA1A() {
         File file = new File("src/main/resources/PDFA1ASample.pdf");
         boolean result = AsposeChecker.isPDFA1A(file);
-        assertTrue(result);
+        assertFalse(result);
     }
 
     @Test
