@@ -8,6 +8,7 @@ target
 .settings
 .idea
 .svn
+.env
 .classpath
 sun-jaxb.episode
 .surefire-*

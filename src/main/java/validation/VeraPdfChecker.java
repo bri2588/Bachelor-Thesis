@@ -24,8 +24,20 @@ public class VeraPdfChecker {
         return isValidPdf(file, PDFAFlavour.PDFA_1_B);
     }
 
+    public boolean isPdfA2A(File file) {
+        return isValidPdf(file, PDFAFlavour.PDFA_2_A);
+    }
+
+    public boolean isPdfA2B(File file) {
+        return isValidPdf(file, PDFAFlavour.PDFA_2_B);
+    }
+
     public boolean isPdfA3A(File file) {
         return isValidPdf(file, PDFAFlavour.PDFA_3_A);
+    }
+
+    public boolean isPdfA3B(File file) {
+        return isValidPdf(file, PDFAFlavour.PDFA_3_B);
     }
 
     @SneakyThrows

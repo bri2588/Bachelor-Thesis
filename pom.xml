@@ -22,9 +22,21 @@
         </repository>
 
         <repository>
+            <id>aspose-cloud</id>
+            <name>Aspose Cloud Repository</name>
+            <url>https://releases.aspose.cloud/java/repo/</url>
+        </repository>
+
+        <repository>
             <id>QoppaSoftware</id>
             <name>Qoppa Software</name>
             <url>https://download.qoppa.com/maven</url>
+        </repository>
+
+        <repository>
+            <id>com.e-iceblue</id>
+            <name>e-iceblue</name>
+            <url>https://repo.e-iceblue.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
 
@@ -43,6 +55,15 @@
             <version>24.10</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-pdf-cloud</artifactId>
+            <version>21.11.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+
         <!-- Preflight from qoppa -->
         <dependency>
             <groupId>com.qoppa</groupId>
@@ -55,6 +76,13 @@
             <groupId>org.verapdf</groupId>
             <artifactId>validation-model</artifactId>
             <version>1.26.1</version>
+        </dependency>
+
+        <!-- Conversioon from Spire -->
+        <dependency>
+            <groupId>e-iceblue</groupId>
+            <artifactId>spire.pdf</artifactId>
+            <version>10.10.7</version>
         </dependency>
 
         <!-- Utilities -->
@@ -70,6 +98,13 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.11.3</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- Dotenv for environment variables -->
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>dotenv-java</artifactId>
+            <version>2.2.4</version>
         </dependency>
     </dependencies>
 </project>
