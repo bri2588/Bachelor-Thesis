@@ -53,4 +53,26 @@ public class QoppaConverterTest {
         assert converted.exists();
         assertTrue(VeraPdfChecker.isPdfA3B(converted));
     }
+
+    @Test
+    public void shouldConvertToPdfA1BLongerPDF() {
+        File inputFile = new File("src/main/resources/PDF_sample.pdf");
+        String outputFile = "src/main/resources/converted.pdf";
+        PDFA_1_B_Conversion profile = new PDFA_1_B_Conversion();
+        QoppaConverter.convertToPDFAB(inputFile, outputFile, profile);
+        File converted = new File("src/main/resources/converted.pdf");
+        assert converted.exists();
+        assertTrue(VeraPdfChecker.isPdfA1B(converted));
+    }
+
+    @Test
+    public void shouldConvertToPdfA2BLongerPDF() {
+        File inputFile = new File("src/main/resources/PDF_sample.pdf");
+        String outputFile = "src/main/resources/converted.pdf";
+        PDFA_2_B_Conversion profile = new PDFA_2_B_Conversion();
+        QoppaConverter.convertToPDFAB(inputFile, outputFile, profile);
+        File converted = new File("src/main/resources/converted.pdf");
+        assert converted.exists();
+        assertTrue(VeraPdfChecker.isPdfA2B(converted));
+    }
 }

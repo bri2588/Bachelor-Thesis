@@ -71,6 +71,27 @@ public class SpireConverterTest {
         assertTrue(VeraPdfChecker.isPdfA3A(converted));
     }
 
+    //More complex file
+    @Test
+    public void shouldConvertToPdfA1AComplex() {
+        File inputFile = new File("src/main/resources/PDF_Sample.pdf");
+        File outputFile = new File("src/main/resources/converted.pdf");
+        SpireConverter.convertToPdfA1A(inputFile.getAbsolutePath(), outputFile.getAbsolutePath());
+        File converted = new File("src/main/resources/converted.pdf");
+        assert converted.exists();
+        assertFalse(VeraPdfChecker.isPdfA1A(converted));
+    }
+
+    @Test
+    public void shouldConvertToPdfA2AComplex() {
+        File inputFile = new File("src/main/resources/PDF_Sample.pdf");
+        File outputFile = new File("src/main/resources/converted.pdf");
+        SpireConverter.convertToPdfA2A(inputFile.getAbsolutePath(), outputFile.getAbsolutePath());
+        File converted = new File("src/main/resources/converted.pdf");
+        assert converted.exists();
+        assertTrue(VeraPdfChecker.isPdfA2A(converted));
+    }
+
     //File without image
     @Test
     public void shouldConvertToPdfA1AFileWithoutImage() {
